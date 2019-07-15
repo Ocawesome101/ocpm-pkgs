@@ -1,0 +1,43 @@
+-- OC File Manager, OC Linux edition --
+local dir = '/'
+while true do
+ shell.setDir(dir)
+ local dircontents = fs.list(shell.resolve(dir))
+ textutils.tabulate(dircontents)
+-- print(dircont)
+ term.write('> ')
+ local cmd = read()
+ local subcmd
+ if cmd:sub(1,5) == ':open' then
+  subcmd = cmd:sub(7,-1)
+  shell.run('nano '..subcmd)
+ elseif cmd == ':q' then
+  print('Goodbye!')
+  break
+ elseif cmd:sub(1,3) == ':rm' then
+  subcmd = cmd:sub(5,-1)
+  if fs.exists(subcmd) then
+   write('Really delete '..subcmd..'?')
+   local yn = read()
+   if yn:lower() == 'y' then
+    fs.delete(dir..'/'..subcmd)
+   else
+    return
+   end
+  end
+ elseif cmd:sub(1) == ':' then
+  print('Unrecognized command '..cmd)
+ elseif cmd == '..' or cmd == ':up' then
+  while dir:sub(-1) ~= '/' do
+   dir = dir:sub(1,-2)
+  end
+ elseif cmd == ':dir' then
+  print('Current directory is '..dir)
+ else
+  if fs.isDir(cmd) then
+   dir = dir..cmd
+  else
+   print(cmd..': not a directory')
+  end
+ end
+end
