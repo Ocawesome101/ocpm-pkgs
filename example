@@ -1,0 +1,10 @@
+--#@arcpack
+--#file:example.lua
+textutils.slowPrint('This is an example package.')
+--#file:install.lua
+-- Install script --
+
+fs.copy(shell.resolve('example.lua'), '/usr/bin/')
+--#file:uninstall.lua
+-- Uninstall script --
+fs.delete('/usr/bin/example.lua')
