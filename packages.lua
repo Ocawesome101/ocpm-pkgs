@@ -1,6 +1,6 @@
 local packages = {
-  ["example"] = {
-    name = 'example.ocp',
+  ["ccemux"] = {
+    name = 'ccemux.arc',
     repo = 'ocawesome101/ocpm-pkgs',
     depends = nil
   }
