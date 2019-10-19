@@ -12,7 +12,7 @@ shell.run('rm /usr/bin/ccemux.lua')
 -- Like the 'emu' command, but for OC Linux --
 
 local usage = [[
-CCEmuX version]] .. ccemux.getVersion() .. [[ by SquidDev
+CCEmuX version]] .. ccemux.getVersion() .. [[ by the CCEmuX Team
 
 Usage:
 ccemux open [number]    number is optional
