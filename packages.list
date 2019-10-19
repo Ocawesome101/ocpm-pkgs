@@ -1,7 +1,7 @@
 local packages = {
   ["ccemux"] = {
     name = 'ccemux.arc',
-    repo = 'ocawesome101/ocpm-pkgs',
+    downloadURL = 'git:ocawesome101/ocpm-pkgs/master/ccemux.arc',
     depends = nil
   }
 }
