@@ -1,6 +1,5 @@
-return {
+packages = {
   ["ccemux"] = {
-    name = 'ccemux.arc',
     downloadURL = 'git:ocawesome101/ocpm-pkgs/master/ccemux.arc',
     depends = nil
   }
